@@ -11,6 +11,8 @@ declare module '@accuser/svelte-unist' {
 
 export { frontmatterBuilder };
 
-export const extensions = [frontmatter()];
+export const extensions: import('micromark-util-types').Extension[] = [frontmatter()];
 
-export const mdastExtensions = [frontmatterFromMarkdown()];
+export const mdastExtensions: [
+	import('mdast-util-from-markdown').Extension | import('mdast-util-from-markdown').Extension[]
+] = [frontmatterFromMarkdown()];
